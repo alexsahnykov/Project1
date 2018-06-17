@@ -14,7 +14,6 @@
 		C132EC4920D3CCF500F16DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C132EC4720D3CCF500F16DBA /* LaunchScreen.storyboard */; };
 		C132EC5420D3CCF500F16DBA /* project1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132EC5320D3CCF500F16DBA /* project1Tests.swift */; };
 		C132EC5F20D3CCF500F16DBA /* project1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132EC5E20D3CCF500F16DBA /* project1UITests.swift */; };
-		C194578920D67CC10025E69A /* 5b857e0605714b702064056589563b11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C194578820D67CC10025E69A /* 5b857e0605714b702064056589563b11.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +47,6 @@
 		C132EC5A20D3CCF500F16DBA /* project1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = project1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C132EC5E20D3CCF500F16DBA /* project1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project1UITests.swift; sourceTree = "<group>"; };
 		C132EC6020D3CCF500F16DBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C194578820D67CC10025E69A /* 5b857e0605714b702064056589563b11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 5b857e0605714b702064056589563b11.jpg; path = ../../../5b857e0605714b702064056589563b11.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +129,6 @@
 		C132EC6C20D3CD2300F16DBA /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				C194578820D67CC10025E69A /* 5b857e0605714b702064056589563b11.jpg */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -242,7 +239,6 @@
 			files = (
 				C132EC4920D3CCF500F16DBA /* LaunchScreen.storyboard in Resources */,
 				C132EC4620D3CCF500F16DBA /* Assets.xcassets in Resources */,
-				C194578920D67CC10025E69A /* 5b857e0605714b702064056589563b11.jpg in Resources */,
 				C132EC4420D3CCF100F16DBA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
