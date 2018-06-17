@@ -101,7 +101,6 @@
 				C132EC4020D3CCF100F16DBA /* ViewController.swift */,
 				C132EC4220D3CCF100F16DBA /* Main.storyboard */,
 				C132EC4520D3CCF500F16DBA /* Assets.xcassets */,
-				C132EC6C20D3CD2300F16DBA /* Images */,
 				C132EC4720D3CCF500F16DBA /* LaunchScreen.storyboard */,
 				C132EC4A20D3CCF500F16DBA /* Info.plist */,
 			);
@@ -124,13 +123,6 @@
 				C132EC6020D3CCF500F16DBA /* Info.plist */,
 			);
 			path = project1UITests;
-			sourceTree = "<group>";
-		};
-		C132EC6C20D3CD2300F16DBA /* Images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
