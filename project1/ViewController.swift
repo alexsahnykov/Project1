@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController,  UITableViewDelegate , UITableViewDataSource   {
     
-    var programmingLanguage = ["Swift","JS","Ruby","Rython","C++","C#","PHP","Java","Scala","Pascal"]
-    
+    var programmingLanguage = ["Swift","JS","Ruby","Python","C++","C#","PHP","Java","Scala","Pascal"]
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return programmingLanguage.count
@@ -20,7 +20,6 @@ class ViewController: UIViewController,  UITableViewDelegate , UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         cell?.textLabel?.text = programmingLanguage [indexPath.row]
-       cell?.imageView?.image = UIImage (named: programmingLanguage [indexPath.row] )
         return cell!
     }
    
@@ -28,7 +27,7 @@ class ViewController: UIViewController,  UITableViewDelegate , UITableViewDataSo
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) { // Delete tableview cell
         if editingStyle == .delete {
             self.programmingLanguage.remove(at: indexPath.row)
-                }
+            }
         tableView.deleteRows(at: [indexPath], with: .fade)
 }
     
