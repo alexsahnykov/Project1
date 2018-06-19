@@ -14,6 +14,9 @@
 		C132EC4920D3CCF500F16DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C132EC4720D3CCF500F16DBA /* LaunchScreen.storyboard */; };
 		C132EC5420D3CCF500F16DBA /* project1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132EC5320D3CCF500F16DBA /* project1Tests.swift */; };
 		C132EC5F20D3CCF500F16DBA /* project1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132EC5E20D3CCF500F16DBA /* project1UITests.swift */; };
+		C1B8E8FC20D905E800A2D726 /* addNewLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B8E8FB20D905E800A2D726 /* addNewLanguageViewController.swift */; };
+		C1B8E94520D9276400A2D726 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B8E94420D9276400A2D726 /* CoreDataStack.swift */; };
+		C1B8E94820D928C600A2D726 /* Languages.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1B8E94620D928C600A2D726 /* Languages.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		C132EC5A20D3CCF500F16DBA /* project1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = project1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C132EC5E20D3CCF500F16DBA /* project1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project1UITests.swift; sourceTree = "<group>"; };
 		C132EC6020D3CCF500F16DBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1B8E8FB20D905E800A2D726 /* addNewLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNewLanguageViewController.swift; sourceTree = "<group>"; };
+		C1B8E94420D9276400A2D726 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		C1B8E94720D928C600A2D726 /* Languages.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Languages.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +104,14 @@
 			isa = PBXGroup;
 			children = (
 				C132EC3E20D3CCF100F16DBA /* AppDelegate.swift */,
+				C1B8E94420D9276400A2D726 /* CoreDataStack.swift */,
+				C1B8E8FB20D905E800A2D726 /* addNewLanguageViewController.swift */,
 				C132EC4020D3CCF100F16DBA /* ViewController.swift */,
 				C132EC4220D3CCF100F16DBA /* Main.storyboard */,
 				C132EC4520D3CCF500F16DBA /* Assets.xcassets */,
 				C132EC4720D3CCF500F16DBA /* LaunchScreen.storyboard */,
 				C132EC4A20D3CCF500F16DBA /* Info.plist */,
+				C1B8E94620D928C600A2D726 /* Languages.xcdatamodeld */,
 			);
 			path = project1;
 			sourceTree = "<group>";
@@ -256,8 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1B8E8FC20D905E800A2D726 /* addNewLanguageViewController.swift in Sources */,
 				C132EC4120D3CCF100F16DBA /* ViewController.swift in Sources */,
 				C132EC3F20D3CCF100F16DBA /* AppDelegate.swift in Sources */,
+				C1B8E94520D9276400A2D726 /* CoreDataStack.swift in Sources */,
+				C1B8E94820D928C600A2D726 /* Languages.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +598,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C1B8E94620D928C600A2D726 /* Languages.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C1B8E94720D928C600A2D726 /* Languages.xcdatamodel */,
+			);
+			currentVersion = C1B8E94720D928C600A2D726 /* Languages.xcdatamodel */;
+			path = Languages.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C132EC3320D3CCF100F16DBA /* Project object */;
 }

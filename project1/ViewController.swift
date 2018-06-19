@@ -7,13 +7,12 @@
 //
 
 import UIKit
-
+import CoreData
 class ViewController: UIViewController,  UITableViewDelegate , UITableViewDataSource   {
 
-    
     var programmingLanguage = ["Swift","JS","Ruby","Python","C++","C#","PHP","Java","Scala","Pascal"]
 
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return programmingLanguage.count
     }
@@ -32,16 +31,16 @@ class ViewController: UIViewController,  UITableViewDelegate , UITableViewDataSo
         tableView.deleteRows(at: [indexPath], with: .fade)
 }
     
+    @IBAction func close(segue: UIStoryboardSegue) {
     
+    }
      override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
+        }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-
 }
+
