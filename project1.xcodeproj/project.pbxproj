@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C132EC3F20D3CCF100F16DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132EC3E20D3CCF100F16DBA /* AppDelegate.swift */; };
-		C132EC4120D3CCF100F16DBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132EC4020D3CCF100F16DBA /* ViewController.swift */; };
 		C132EC4420D3CCF100F16DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C132EC4220D3CCF100F16DBA /* Main.storyboard */; };
 		C132EC4620D3CCF500F16DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C132EC4520D3CCF500F16DBA /* Assets.xcassets */; };
 		C132EC4920D3CCF500F16DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C132EC4720D3CCF500F16DBA /* LaunchScreen.storyboard */; };
 		C132EC5420D3CCF500F16DBA /* project1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132EC5320D3CCF500F16DBA /* project1Tests.swift */; };
 		C132EC5F20D3CCF500F16DBA /* project1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132EC5E20D3CCF500F16DBA /* project1UITests.swift */; };
-		C1B8E8FC20D905E800A2D726 /* addNewLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B8E8FB20D905E800A2D726 /* addNewLanguageViewController.swift */; };
+		C18CF3D020DBD6500068F15B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C18CF3CF20DBD6500068F15B /* .gitignore */; };
+		C18CF3D620DC2FE50068F15B /* LanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18CF3D520DC2FE50068F15B /* LanguagesTableViewController.swift */; };
 		C1B8E94520D9276400A2D726 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B8E94420D9276400A2D726 /* CoreDataStack.swift */; };
 		C1B8E94820D928C600A2D726 /* Languages.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1B8E94620D928C600A2D726 /* Languages.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -39,7 +39,6 @@
 /* Begin PBXFileReference section */
 		C132EC3B20D3CCF100F16DBA /* project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C132EC3E20D3CCF100F16DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C132EC4020D3CCF100F16DBA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C132EC4320D3CCF100F16DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C132EC4520D3CCF500F16DBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C132EC4820D3CCF500F16DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,7 +49,8 @@
 		C132EC5A20D3CCF500F16DBA /* project1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = project1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C132EC5E20D3CCF500F16DBA /* project1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project1UITests.swift; sourceTree = "<group>"; };
 		C132EC6020D3CCF500F16DBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1B8E8FB20D905E800A2D726 /* addNewLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNewLanguageViewController.swift; sourceTree = "<group>"; };
+		C18CF3CF20DBD6500068F15B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		C18CF3D520DC2FE50068F15B /* LanguagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesTableViewController.swift; sourceTree = "<group>"; };
 		C1B8E94420D9276400A2D726 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		C1B8E94720D928C600A2D726 /* Languages.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Languages.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +83,7 @@
 		C132EC3220D3CCF100F16DBA = {
 			isa = PBXGroup;
 			children = (
+				C18CF3CF20DBD6500068F15B /* .gitignore */,
 				C132EC3D20D3CCF100F16DBA /* project1 */,
 				C132EC5220D3CCF500F16DBA /* project1Tests */,
 				C132EC5D20D3CCF500F16DBA /* project1UITests */,
@@ -105,8 +106,7 @@
 			children = (
 				C132EC3E20D3CCF100F16DBA /* AppDelegate.swift */,
 				C1B8E94420D9276400A2D726 /* CoreDataStack.swift */,
-				C1B8E8FB20D905E800A2D726 /* addNewLanguageViewController.swift */,
-				C132EC4020D3CCF100F16DBA /* ViewController.swift */,
+				C18CF3D520DC2FE50068F15B /* LanguagesTableViewController.swift */,
 				C132EC4220D3CCF100F16DBA /* Main.storyboard */,
 				C132EC4520D3CCF500F16DBA /* Assets.xcassets */,
 				C132EC4720D3CCF500F16DBA /* LaunchScreen.storyboard */,
@@ -238,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C18CF3D020DBD6500068F15B /* .gitignore in Resources */,
 				C132EC4920D3CCF500F16DBA /* LaunchScreen.storyboard in Resources */,
 				C132EC4620D3CCF500F16DBA /* Assets.xcassets in Resources */,
 				C132EC4420D3CCF100F16DBA /* Main.storyboard in Resources */,
@@ -265,9 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1B8E8FC20D905E800A2D726 /* addNewLanguageViewController.swift in Sources */,
-				C132EC4120D3CCF100F16DBA /* ViewController.swift in Sources */,
 				C132EC3F20D3CCF100F16DBA /* AppDelegate.swift in Sources */,
+				C18CF3D620DC2FE50068F15B /* LanguagesTableViewController.swift in Sources */,
 				C1B8E94520D9276400A2D726 /* CoreDataStack.swift in Sources */,
 				C1B8E94820D928C600A2D726 /* Languages.xcdatamodeld in Sources */,
 			);
