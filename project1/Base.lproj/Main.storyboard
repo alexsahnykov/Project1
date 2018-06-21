@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="project1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Ad-YN-QMO">
-                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="y4W-Md-wQs" style="IBUITableViewCellStyleDefault" id="fxi-kY-fs7">
@@ -119,7 +119,7 @@
             <objects>
                 <viewController title="Описание" id="1xC-Y2-aRC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="406-Ka-BYc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="o3I-aa-fYt"/>
@@ -128,65 +128,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R6F-qK-y0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1012" y="132"/>
-        </scene>
-        <!--Добавление языка-->
-        <scene sceneID="iFh-o2-afR">
-            <objects>
-                <viewController title="Добавление языка" id="Qoz-F6-mH2" customClass="addNewLanguageViewController" customModule="project1" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="o8f-3C-ChK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Введите название языка" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dR-YZ-gn5">
-                                <rect key="frame" x="16" y="30" width="343" height="31.333333333333332"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Введите язык программирования" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZ7-Tz-cyc">
-                                <rect key="frame" x="16" y="106" width="343" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Язык" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zXp-by-l2X">
-                                <rect key="frame" x="16" y="145" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="Qk5-Ha-nes"/>
-                                </connections>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="KAf-4j-dMH"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="oLB-jz-8XP">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7y3-EV-UIB">
-                            <connections>
-                                <segue destination="rqo-mY-Iz2" kind="unwind" identifier="unwingSegueFromNewLanguage" unwindAction="closeWithSegue:" id="A2K-Xm-2i2"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8Mq-1H-gQe">
-                            <connections>
-                                <action selector="saveButtonPressed:" destination="Qoz-F6-mH2" id="bYW-Ri-n1R"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="nameTextfField" destination="zXp-by-l2X" id="bsP-Uf-nar"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" id="bUZ-fH-5pp"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VBD-5f-YAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="rqo-mY-Iz2" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="1012" y="832.75862068965523"/>
         </scene>
         <!--Профиль-->
         <scene sceneID="9Tw-Zi-xMc">
@@ -225,9 +166,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Qoz-F6-mH2" kind="relationship" relationship="rootViewController" id="Bs1-up-nBn"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZB6-gt-uOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -238,7 +176,4 @@
         <image name="account" width="16" height="16"/>
         <image name="icons8-menu-75" width="25" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="bUZ-fH-5pp"/>
-    </inferredMetricsTieBreakers>
 </document>
