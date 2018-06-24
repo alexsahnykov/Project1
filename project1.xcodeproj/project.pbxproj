@@ -17,6 +17,7 @@
 		C18CF3D020DBD6500068F15B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C18CF3CF20DBD6500068F15B /* .gitignore */; };
 		C18CF3D620DC2FE50068F15B /* LanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18CF3D520DC2FE50068F15B /* LanguagesTableViewController.swift */; };
 		C1B8E94820D928C600A2D726 /* Languages.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1B8E94620D928C600A2D726 /* Languages.xcdatamodeld */; };
+		C1BE9E2A20DFCC6B0085A566 /* LanguagesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE9E2920DFCC6B0085A566 /* LanguagesList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		C18CF3CF20DBD6500068F15B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C18CF3D520DC2FE50068F15B /* LanguagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesTableViewController.swift; sourceTree = "<group>"; };
 		C1B8E94720D928C600A2D726 /* Languages.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Languages.xcdatamodel; sourceTree = "<group>"; };
+		C1BE9E2920DFCC6B0085A566 /* LanguagesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		C132EC3D20D3CCF100F16DBA /* project1 */ = {
 			isa = PBXGroup;
 			children = (
+				C1BE9E2B20DFCC7E0085A566 /* Model */,
 				C132EC3E20D3CCF100F16DBA /* AppDelegate.swift */,
 				C18CF3D520DC2FE50068F15B /* LanguagesTableViewController.swift */,
 				C132EC4220D3CCF100F16DBA /* Main.storyboard */,
@@ -145,6 +148,15 @@
 				C132EC6020D3CCF500F16DBA /* Info.plist */,
 			);
 			path = project1UITests;
+			sourceTree = "<group>";
+		};
+		C1BE9E2B20DFCC7E0085A566 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1BE9E2920DFCC6B0085A566 /* LanguagesList.swift */,
+			);
+			name = Model;
+			path = "New Group1";
 			sourceTree = "<group>";
 		};
 		CC289FA4D57DE1B9C3A48196 /* Frameworks */ = {
@@ -332,6 +344,7 @@
 			files = (
 				C132EC3F20D3CCF100F16DBA /* AppDelegate.swift in Sources */,
 				C18CF3D620DC2FE50068F15B /* LanguagesTableViewController.swift in Sources */,
+				C1BE9E2A20DFCC6B0085A566 /* LanguagesList.swift in Sources */,
 				C1B8E94820D928C600A2D726 /* Languages.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

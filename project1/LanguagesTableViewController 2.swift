@@ -11,45 +11,31 @@ import RealmSwift
 
 class LanguagesTableViewController: UITableViewController {
     
-    var programmingLanguage: Results<LanguagesList>!
-    override func viewWillAppear(_ animated: Bool) {
-        readTasksAndUpdateUI()
-            }
-    
-    func readTasksAndUpdateUI(){
-        programmingLanguage = uiRealm.objects(LanguagesList.self)
-            }
-    
-    
-    @IBAction func addNewLanguagesButton(_ updatedList: Any) {                                   // +Button
-        let ac = UIAlertController(title: "Add Languages", message: "Add new Languages", preferredStyle: .alert)
-                                                                                                //create alert controller
-        let ok = UIAlertAction(title: "Ok", style: .default) { action in
-            let textField = ac.textFields?.first?.text
-            let newLanguage = LanguagesList()
-            newLanguage.nameLanguages = textField!
-            try! uiRealm.write {
-                uiRealm.add(newLanguage)
-                }
-        self.tableView.reloadData()                                                         // reload table
-}
+    var programmingLanguage : Result <>
+
+    @IBAction func addNewLanguagesButton(_ sender: Any) {   // +Button
         
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)        //cancel button
+        let ac = UIAlertController(title: "Add Languages", message: "Add new Languages", preferredStyle: .alert)                            //create alert controller
+        let ok = UIAlertAction(title: "Ok", style: .default) { action in
+            let textField = ac.textFields?[0]
+            self.programmingLanguage.append((textField?.text!)!)  // add in array
+            self.tableView.reloadData() // reload table
+   
+            }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil) //cancel button
         ac.addTextField {
             text in
             }
         ac.addAction(ok)
         ac.addAction(cancel)
-        present(ac, animated: true , completion: nil)                               // Present alert controller
+        present(ac, animated: true , completion: nil)  // Present alert controller
         
     }
     
         override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    func saveLanguagesList(taskToDo:String) {
-    }
+}
 
         override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -63,32 +49,21 @@ class LanguagesTableViewController: UITableViewController {
 
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        
-            if let listsTasks = programmingLanguage{
-                return listsTasks.count
-            }
-            return 0
+        return programmingLanguage.count
     }
     
-       override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) { // Delete tableview cell
+        override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) { // Delete tableview cell
         if editingStyle == .delete {
-            let listToBeDeleted = self.programmingLanguage[indexPath.row]
-            try! uiRealm.write{
-                uiRealm.delete(listToBeDeleted)
-                self.readTasksAndUpdateUI()
-                }
-            }
+            self.programmingLanguage.remove(at: indexPath.row)
+        }
         tableView.deleteRows(at: [indexPath], with: .fade)
     }
     
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath)
-            let list = programmingLanguage  [indexPath.row]
-            cell.textLabel?.text = list.nameLanguages
-            return cell
+       cell.textLabel?.text = programmingLanguage [indexPath.row]
+        return cell
     }
- 
-    
     
 
     /*
@@ -137,5 +112,3 @@ class LanguagesTableViewController: UITableViewController {
     */
 
 }
-    
-
