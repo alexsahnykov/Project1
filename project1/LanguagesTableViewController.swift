@@ -12,7 +12,7 @@ import RealmSwift
 class LanguagesTableViewController: UITableViewController {
     let realm = try! Realm()
    
-    var programmingLanguage: Results<LanguagesList>?
+    var programmingLanguage: Results<LanguagesList>!
    
     let item = LanguagesList()
    
@@ -22,6 +22,8 @@ class LanguagesTableViewController: UITableViewController {
     
     func readTasksAndUpdateUI(){
         programmingLanguage = uiRealm.objects(LanguagesList.self)
+        self.tableView.setEditing(false, animated: true)
+        self.tableView.reloadData()
             }
     
     
@@ -88,12 +90,28 @@ class LanguagesTableViewController: UITableViewController {
     
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath)
-            let list = programmingLanguage!  [indexPath.row]
-            cell.textLabel?.text = list.nameLanguages
+            cell.textLabel?.text = programmingLanguage![indexPath.row].nameLanguages
             return cell
     }
- 
+   
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segue" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let dvc = segue.destination as! LanguagesDetailViewController
+               dvc.languages = self.programmingLanguage![indexPath.row]
+            }
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+
+
+
+}
     
 
     /*
@@ -141,6 +159,6 @@ class LanguagesTableViewController: UITableViewController {
     }
     */
 
-}
+
     
 

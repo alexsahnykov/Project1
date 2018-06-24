@@ -11,7 +11,7 @@ import Foundation
 import RealmSwift
 
 class LanguagesList: Object {
-    @objc dynamic var nameLanguages = ""
+    @objc dynamic var nameLanguages:String = ""
     @objc dynamic var createdAt = NSDate()
     
     
