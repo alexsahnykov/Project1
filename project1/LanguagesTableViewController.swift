@@ -10,8 +10,12 @@ import UIKit
 import RealmSwift
 
 class LanguagesTableViewController: UITableViewController {
-    
-    var programmingLanguage: Results<LanguagesList>!
+    let realm = try! Realm()
+   
+    var programmingLanguage: Results<LanguagesList>?
+   
+    let item = LanguagesList()
+   
     override func viewWillAppear(_ animated: Bool) {
         readTasksAndUpdateUI()
             }
@@ -23,11 +27,11 @@ class LanguagesTableViewController: UITableViewController {
     
     @IBAction func addNewLanguagesButton(_ updatedList: Any) {                                   // +Button
         let ac = UIAlertController(title: "Add Languages", message: "Add new Languages", preferredStyle: .alert)
-                                                                                                //create alert controller
-        let ok = UIAlertAction(title: "Ok", style: .default) { action in
+            let ok = UIAlertAction(title: "Ok", style: .default) { action in                
             let textField = ac.textFields?.first?.text
             let newLanguage = LanguagesList()
             newLanguage.nameLanguages = textField!
+           
             try! uiRealm.write {
                 uiRealm.add(newLanguage)
                 }
@@ -40,6 +44,7 @@ class LanguagesTableViewController: UITableViewController {
             }
         ac.addAction(ok)
         ac.addAction(cancel)
+        self.tableView.reloadData()
         present(ac, animated: true , completion: nil)                               // Present alert controller
         
     }
@@ -72,7 +77,7 @@ class LanguagesTableViewController: UITableViewController {
     
        override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) { // Delete tableview cell
         if editingStyle == .delete {
-            let listToBeDeleted = self.programmingLanguage[indexPath.row]
+            let listToBeDeleted = self.programmingLanguage![indexPath.row]
             try! uiRealm.write{
                 uiRealm.delete(listToBeDeleted)
                 self.readTasksAndUpdateUI()
@@ -83,7 +88,7 @@ class LanguagesTableViewController: UITableViewController {
     
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath)
-            let list = programmingLanguage  [indexPath.row]
+            let list = programmingLanguage!  [indexPath.row]
             cell.textLabel?.text = list.nameLanguages
             return cell
     }
