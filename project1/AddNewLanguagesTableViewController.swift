@@ -29,6 +29,8 @@ class AddNewLanguagesTableViewController: UITableViewController {
     
 
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var linkTextField: UITextField!
     
     
     
@@ -42,6 +44,8 @@ class AddNewLanguagesTableViewController: UITableViewController {
         } else {
             let LanguagesItem = LanguagesList()
             LanguagesItem.nameLanguages = nameTextField.text!
+            LanguagesItem.titleLanguages = titleTextField.text!
+            LanguagesItem.linkLanguages = linkTextField.text!
             
             // We are adding the reminder to our database
             try! uiRealm.write({

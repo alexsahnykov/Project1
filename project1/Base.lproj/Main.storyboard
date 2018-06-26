@@ -136,7 +136,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="linkTextField" destination="S4B-43-nLp" id="YWp-UH-QAX"/>
                         <outlet property="nameTextField" destination="pZ9-fj-7Zd" id="kdu-dX-HGQ"/>
+                        <outlet property="titleTextField" destination="Qkg-BO-5MH" id="J6W-tb-pDQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rAb-xh-9mG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -160,9 +162,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="SaB-O0-ah6" kind="show" id="OoI-08-VdM"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -184,10 +183,10 @@
             </objects>
             <point key="canvasLocation" x="583" y="-439"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Languages View Controller-->
         <scene sceneID="b3i-a4-dnR">
             <objects>
-                <viewController id="SaB-O0-ah6" sceneMemberID="viewController">
+                <viewController id="SaB-O0-ah6" customClass="detailLanguagesViewController" customModule="project1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AF2-6C-o39">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,6 +216,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4tk-01-8cA"/>
                     </view>
+                    <connections>
+                        <outlet property="dad" destination="yqB-Fu-Mqa" id="zCn-gm-kgN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfK-on-BWA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
