@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class LanguagesTableViewController: UITableViewController {
-    let realm = try! Realm()
+ 
    
     var programmingLanguage: Results<LanguagesList>!
    
@@ -26,29 +26,10 @@ class LanguagesTableViewController: UITableViewController {
         self.tableView.reloadData()
             }
     
+    @IBAction func close(segue:UIStoryboardSegue){
+    }
     
     @IBAction func addNewLanguagesButton(_ updatedList: Any) {                                   // +Button
-        let ac = UIAlertController(title: "Add Languages", message: "Add new Languages", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "Ok", style: .default) { action in                
-            let textField = ac.textFields?.first?.text
-            let newLanguage = LanguagesList()
-            newLanguage.nameLanguages = textField!
-           
-            try! uiRealm.write {
-                uiRealm.add(newLanguage)
-                }
-        self.tableView.reloadData()                                                         // reload table
-}
-        
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)        //cancel button
-        ac.addTextField {
-            text in
-            }
-        ac.addAction(ok)
-        ac.addAction(cancel)
-        self.tableView.reloadData()
-        present(ac, animated: true , completion: nil)                               // Present alert controller
-        
     }
     
         override func viewDidLoad() {
@@ -78,13 +59,14 @@ class LanguagesTableViewController: UITableViewController {
     }
     
        override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) { // Delete tableview cell
-        if editingStyle == .delete {
-            let listToBeDeleted = self.programmingLanguage![indexPath.row]
-            try! uiRealm.write{
-                uiRealm.delete(listToBeDeleted)
-                self.readTasksAndUpdateUI()
-                }
-            }
+      if (editingStyle == .delete){
+                let item = programmingLanguage[indexPath.row]
+                try! uiRealm.write({
+                    uiRealm.delete(item)
+                })
+                tableView.deleteRows(at:[indexPath], with: .automatic)
+        }
+            
         tableView.deleteRows(at: [indexPath], with: .fade)
     }
     
