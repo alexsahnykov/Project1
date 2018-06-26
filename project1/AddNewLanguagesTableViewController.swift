@@ -34,6 +34,10 @@ class AddNewLanguagesTableViewController: UITableViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         if ((nameTextField.text?.isEmpty)! || nameTextField.text == " ") {
+           let ac = UIAlertController(title: "Ошибка", message: "Заполните имя языка пожалуйста", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+            present(ac, animated: true, completion: nil)
+            ac.addAction(cancel)
             print ("Не все поля заполнены!")
         } else {
             let LanguagesItem = LanguagesList()
@@ -43,8 +47,9 @@ class AddNewLanguagesTableViewController: UITableViewController {
             try! uiRealm.write({
                 uiRealm.add(LanguagesItem)
             })
-        }
         performSegue(withIdentifier: "unwindSegueFromNewCell", sender: self) //save segue to main viev
+        }
+        
     }
     
 

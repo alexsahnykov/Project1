@@ -78,7 +78,7 @@ class LanguagesTableViewController: UITableViewController {
    
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  /*  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segue" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let dvc = segue.destination as! LanguagesDetailViewController
@@ -86,7 +86,7 @@ class LanguagesTableViewController: UITableViewController {
             }
         }
     }
-
+*/
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
