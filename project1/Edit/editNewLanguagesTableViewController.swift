@@ -10,8 +10,20 @@ import UIKit
 import RealmSwift
 class editNewLanguagesTableViewController: UITableViewController {
 
+    @IBOutlet weak var nameEditTextField: UITextField!
+    @IBOutlet weak var titleEditTextField: UITextField!
+    @IBOutlet weak var linkEditTextField: UITextField!
+    
+    @IBAction func editSaveButtonPressed(_ sender: Any) {
+    }
+    
+    var editDetailName = ""
+    var editDetailTitle = ""
+    var editDetailLink = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
     }
 

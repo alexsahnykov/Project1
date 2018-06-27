@@ -98,6 +98,40 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C112D8A120E3A534007E2D73 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				C1F2F4AC20E38E950032B309 /* editNewLanguagesTableViewController.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		C112D8A220E3A578007E2D73 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C1BE9E2B20DFCC7E0085A566 /* Model */,
+				C132EC3E20D3CCF100F16DBA /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		C112D8A320E3A584007E2D73 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C18CF3D520DC2FE50068F15B /* LanguagesTableViewController.swift */,
+			);
+			name = Main;
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
+		C112D8A420E3A594007E2D73 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				C15FBDA720E26C2C00538A43 /* AddNewLanguagesTableViewController.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
 		C132EC3220D3CCF100F16DBA = {
 			isa = PBXGroup;
 			children = (
@@ -124,16 +158,14 @@
 		C132EC3D20D3CCF100F16DBA /* project1 */ = {
 			isa = PBXGroup;
 			children = (
-				C1BE9E2B20DFCC7E0085A566 /* Model */,
-				C132EC3E20D3CCF100F16DBA /* AppDelegate.swift */,
-				C15FBDA720E26C2C00538A43 /* AddNewLanguagesTableViewController.swift */,
-				C18CF3D520DC2FE50068F15B /* LanguagesTableViewController.swift */,
-				C1F2F4AC20E38E950032B309 /* editNewLanguagesTableViewController.swift */,
-				C1434BEB20E2D2780033F80D /* detailLanguagesViewController.swift */,
+				C112D8A220E3A578007E2D73 /* Application */,
+				C112D8A320E3A584007E2D73 /* Main */,
+				C112D8A420E3A594007E2D73 /* Add */,
+				C112D8A120E3A534007E2D73 /* Edit */,
 				C1EDB88220E032B1000D9CD1 /* Details */,
 				C132EC4220D3CCF100F16DBA /* Main.storyboard */,
-				C132EC4520D3CCF500F16DBA /* Assets.xcassets */,
 				C132EC4720D3CCF500F16DBA /* LaunchScreen.storyboard */,
+				C132EC4520D3CCF500F16DBA /* Assets.xcassets */,
 				C132EC4A20D3CCF500F16DBA /* Info.plist */,
 			);
 			path = project1;
@@ -169,6 +201,7 @@
 		C1EDB88220E032B1000D9CD1 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				C1434BEB20E2D2780033F80D /* detailLanguagesViewController.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";

@@ -15,8 +15,13 @@ class LanguagesList: Object {
     @objc dynamic var titleLanguages:String = ""
     @objc dynamic var linkLanguages:String = ""
     @objc dynamic var createdAt = NSDate()
-    
-    
+   
+    convenience init(nameLanguages: String, titleLanguages: String, linkLanguages: String ) {
+        self.init()
+        self.nameLanguages = nameLanguages
+        self.titleLanguages = titleLanguages
+        self.linkLanguages = linkLanguages
+    }
     // Specify properties to ignore (Realm won't persist these)
     
     //  override static func ignoredProperties() -> [String] {
