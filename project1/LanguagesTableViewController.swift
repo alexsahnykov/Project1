@@ -68,11 +68,13 @@ class LanguagesTableViewController: UITableViewController {
         }
             
         tableView.deleteRows(at: [indexPath], with: .fade)
+          self.tableView.reloadData()
     }
     
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath)
             cell.textLabel?.text = programmingLanguage![indexPath.row].nameLanguages
+            self.programmingLanguage = self.programmingLanguage.sorted(byKeyPath: "nameLanguages")
             return cell
     }
    
@@ -90,7 +92,21 @@ class LanguagesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    @IBAction func didSelectSortCriteria(sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0{
+            
+            // A-Z
+            self.programmingLanguage = self.programmingLanguage.sorted(byKeyPath: "nameLanguages")
+                   self.tableView.reloadData()
+        }
+        else{
+            // date
+             self.programmingLanguage = self.programmingLanguage.sorted(byKeyPath: "createdAt",ascending:false)
+              self.tableView.reloadData()
+        }
 
+    }
 
 
 }

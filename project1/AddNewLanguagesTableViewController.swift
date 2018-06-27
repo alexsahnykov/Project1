@@ -52,7 +52,9 @@ class AddNewLanguagesTableViewController: UITableViewController {
                 uiRealm.add(LanguagesItem)
             })
         performSegue(withIdentifier: "unwindSegueFromNewCell", sender: self) //save segue to main viev
+         self.tableView.reloadData()
         }
+        
         
     }
     
