@@ -14,6 +14,7 @@ class AddNewLanguagesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -48,11 +49,10 @@ class AddNewLanguagesTableViewController: UITableViewController {
             LanguagesItem.linkLanguages = linkTextField.text!
             
             // We are adding the reminder to our database
-            try! uiRealm.write({
-                uiRealm.add(LanguagesItem)
+            try! realm.write({
+                realm.add(LanguagesItem)
             })
         performSegue(withIdentifier: "unwindSegueFromNewCell", sender: self) //save segue to main viev
-         self.tableView.reloadData()
         }
         
         

@@ -13,15 +13,14 @@ class LanguagesTableViewController: UITableViewController {
  
    
     var programmingLanguage: Results<LanguagesList>!
-   
     let item = LanguagesList()
-   
+    
     override func viewWillAppear(_ animated: Bool) {
         readTasksAndUpdateUI()
             }
     
     func readTasksAndUpdateUI(){
-        programmingLanguage = uiRealm.objects(LanguagesList.self)
+        programmingLanguage = realm.objects(LanguagesList.self)
         self.tableView.setEditing(false, animated: true)
         self.tableView.reloadData()
             }
@@ -34,7 +33,7 @@ class LanguagesTableViewController: UITableViewController {
     
         override func viewDidLoad() {
         super.viewDidLoad()
-    }
+     }
     
     func saveLanguagesList(taskToDo:String) {
     }
@@ -58,23 +57,29 @@ class LanguagesTableViewController: UITableViewController {
             return 0
     }
     
-       override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) { // Delete tableview cell
-      if (editingStyle == .delete){
-                let item = programmingLanguage[indexPath.row]
-                try! uiRealm.write({
-                    uiRealm.delete(item)
-                })
-                tableView.deleteRows(at:[indexPath], with: .automatic)
-        }
-            
-        tableView.deleteRows(at: [indexPath], with: .fade)
-          self.tableView.reloadData()
+   override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+   
+        let delete = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
+        let item = self.programmingLanguage[indexPath.row]
+        try! realm.write({
+            realm.delete(item)
+        })
+        
+        tableView.deleteRows(at:[indexPath], with: .automatic)
     }
-    
+        let edit = UITableViewRowAction(style: .default, title: "Edit") { (action, indexPath) in
+            let languageToBeUpdated = self.programmingLanguage[indexPath.row]
+            self.performSegue(withIdentifier: "editSegue", sender: languageToBeUpdated) //!!!!! error
+        }
+    edit.backgroundColor = #colorLiteral(red: 0, green: 0.4117647059, blue: 0.8509803922, alpha: 1)
+    delete.backgroundColor = #colorLiteral(red: 0.9152866006, green: 0.246553123, blue: 0.2010768652, alpha: 1)
+
+    return [edit,delete]
+    }
+
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath)
             cell.textLabel?.text = programmingLanguage![indexPath.row].nameLanguages
-            self.programmingLanguage = self.programmingLanguage.sorted(byKeyPath: "nameLanguages")
             return cell
     }
    
@@ -98,16 +103,15 @@ class LanguagesTableViewController: UITableViewController {
             
             // A-Z
             self.programmingLanguage = self.programmingLanguage.sorted(byKeyPath: "nameLanguages")
-                   self.tableView.reloadData()
+            
         }
         else{
             // date
              self.programmingLanguage = self.programmingLanguage.sorted(byKeyPath: "createdAt",ascending:false)
-              self.tableView.reloadData()
+            
         }
-
+self.tableView.reloadData()
     }
-
 
 }
     
