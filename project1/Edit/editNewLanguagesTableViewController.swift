@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 class editNewLanguagesTableViewController: UITableViewController {
+    var programmingLanguage: Results<LanguagesList>?
 
     @IBOutlet weak var nameEditTextField: UITextField!
     @IBOutlet weak var titleEditTextField: UITextField!
@@ -20,11 +21,14 @@ class editNewLanguagesTableViewController: UITableViewController {
     var editDetailName = ""
     var editDetailTitle = ""
     var editDetailLink = ""
+     var LanguageToDelete = LanguagesList()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+        nameEditTextField.text = editDetailName
+        titleEditTextField.text = editDetailTitle
+        linkEditTextField.text = editDetailLink
     }
 
     override func didReceiveMemoryWarning() {

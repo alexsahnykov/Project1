@@ -17,13 +17,13 @@ class LanguagesTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         readTasksAndUpdateUI()
-            }
-    
-    func readTasksAndUpdateUI(){
-        programmingLanguage = realm.objects(LanguagesList.self)
-        self.tableView.setEditing(false, animated: true)
-        self.tableView.reloadData()
-            }
+    }
+
+func readTasksAndUpdateUI(){
+    programmingLanguage = realm.objects(LanguagesList.self)
+    self.tableView.setEditing(false, animated: true)
+    self.tableView.reloadData()
+}
     
     @IBAction func close(segue:UIStoryboardSegue){
     }
@@ -35,8 +35,7 @@ class LanguagesTableViewController: UITableViewController {
         super.viewDidLoad()
      }
     
-    func saveLanguagesList(taskToDo:String) {
-    }
+ 
 
         override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -69,7 +68,7 @@ class LanguagesTableViewController: UITableViewController {
     }
         let edit = UITableViewRowAction(style: .default, title: "Edit") { (action, indexPath) in
             let languageToBeUpdated = self.programmingLanguage[indexPath.row]
-            self.performSegue(withIdentifier: "editSegue", sender: languageToBeUpdated) //!!!!! error
+            self.performSegue(withIdentifier: "editSegue", sender: languageToBeUpdated) 
         }
     edit.backgroundColor = #colorLiteral(red: 0, green: 0.4117647059, blue: 0.8509803922, alpha: 1)
     delete.backgroundColor = #colorLiteral(red: 0.9152866006, green: 0.246553123, blue: 0.2010768652, alpha: 1)
@@ -84,16 +83,6 @@ class LanguagesTableViewController: UITableViewController {
     }
    
     
-    
-  /*  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segue" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let dvc = segue.destination as! LanguagesDetailViewController
-               dvc.languages = self.programmingLanguage![indexPath.row]
-            }
-        }
-    }
-*/
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -112,55 +101,35 @@ class LanguagesTableViewController: UITableViewController {
         }
 self.tableView.reloadData()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+ /*   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "" {
+            let indexPath = tableView.indexPathForSelectedRow
+            let name = programmingLanguage[indexPath!.row].nameLanguages
+            let title = programmingLanguage[indexPath!.row].titleLanguages
+            let link = programmingLanguage[indexPath!.row].linkLanguages
+            
+            let destinationDetailViewController = segue.destination as! detailLanguagesViewController
+          
+            destinationDetailViewController.detailDetailName = name
+            destinationDetailViewController.detailDetailTitle = title
+            destinationDetailViewController.detailDetailLink = link
+        }
+        if segue.identifier == "editDetail" {
+            let indexPath = tableView.indexPathForSelectedRow
+            let name = programmingLanguage[indexPath!.row].nameLanguages
+            let title = programmingLanguage[indexPath!.row].titleLanguages
+            let link = programmingLanguage[indexPath!.row].linkLanguages
+            
+            let destinaionEditViewController = segue.destination as! editNewLanguagesTableViewController
+            
+            destinaionEditViewController.editDetailName = name
+            destinaionEditViewController.editDetailTitle = title
+            destinaionEditViewController.editDetailLink = link
+                    }
+            }
 
+*/
 }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-
-    
-
