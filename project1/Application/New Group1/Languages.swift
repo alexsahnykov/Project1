@@ -22,10 +22,5 @@ class LanguagesList: Object {
         self.titleLanguages = titleLanguages
         self.linkLanguages = linkLanguages
     }
-    // Specify properties to ignore (Realm won't persist these)
-    
-    //  override static func ignoredProperties() -> [String] {
-    //    return []
-    //  }
 }
 

@@ -18,7 +18,7 @@
 		C15FBDA820E26C2C00538A43 /* AddNewLanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15FBDA720E26C2C00538A43 /* AddNewLanguagesTableViewController.swift */; };
 		C18CF3D020DBD6500068F15B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C18CF3CF20DBD6500068F15B /* .gitignore */; };
 		C18CF3D620DC2FE50068F15B /* LanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18CF3D520DC2FE50068F15B /* LanguagesTableViewController.swift */; };
-		C1BE9E2A20DFCC6B0085A566 /* LanguagesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE9E2920DFCC6B0085A566 /* LanguagesList.swift */; };
+		C1BE9E2A20DFCC6B0085A566 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE9E2920DFCC6B0085A566 /* Languages.swift */; };
 		C1F2F4AD20E38E950032B309 /* editNewLanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2F4AC20E38E950032B309 /* editNewLanguagesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +59,7 @@
 		C15FBDA720E26C2C00538A43 /* AddNewLanguagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewLanguagesTableViewController.swift; sourceTree = "<group>"; };
 		C18CF3CF20DBD6500068F15B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C18CF3D520DC2FE50068F15B /* LanguagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesTableViewController.swift; sourceTree = "<group>"; };
-		C1BE9E2920DFCC6B0085A566 /* LanguagesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesList.swift; sourceTree = "<group>"; };
+		C1BE9E2920DFCC6B0085A566 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		C1F2F4AC20E38E950032B309 /* editNewLanguagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editNewLanguagesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,7 +192,7 @@
 		C1BE9E2B20DFCC7E0085A566 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C1BE9E2920DFCC6B0085A566 /* LanguagesList.swift */,
+				C1BE9E2920DFCC6B0085A566 /* Languages.swift */,
 			);
 			name = Model;
 			path = "New Group1";
@@ -392,7 +392,7 @@
 				C132EC3F20D3CCF100F16DBA /* AppDelegate.swift in Sources */,
 				C18CF3D620DC2FE50068F15B /* LanguagesTableViewController.swift in Sources */,
 				C1F2F4AD20E38E950032B309 /* editNewLanguagesTableViewController.swift in Sources */,
-				C1BE9E2A20DFCC6B0085A566 /* LanguagesList.swift in Sources */,
+				C1BE9E2A20DFCC6B0085A566 /* Languages.swift in Sources */,
 				C1434BEC20E2D2780033F80D /* detailLanguagesViewController.swift in Sources */,
 				C15FBDA820E26C2C00538A43 /* AddNewLanguagesTableViewController.swift in Sources */,
 			);

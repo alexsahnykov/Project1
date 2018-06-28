@@ -10,51 +10,46 @@ import UIKit
 import RealmSwift
 
 class LanguagesTableViewController: UITableViewController {
- 
-   
     var programmingLanguage: Results<LanguagesList>!
     let item = LanguagesList()
     
-    override func viewWillAppear(_ animated: Bool) {
-        readTasksAndUpdateUI()
-    }
-
-func readTasksAndUpdateUI(){
-    programmingLanguage = realm.objects(LanguagesList.self)
-    self.tableView.setEditing(false, animated: true)
-    self.tableView.reloadData()
-}
+    // system
+   
+    
+    @IBOutlet var mainTableView: UITableView!
     
     @IBAction func close(segue:UIStoryboardSegue){
+        tableView.reloadData()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    @IBAction func addNewLanguagesButton(_ updatedList: Any) {
     }
     
-    @IBAction func addNewLanguagesButton(_ updatedList: Any) {                                   // +Button
-    }
-    
-        override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-     }
+        }
     
- 
-
-        override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-        override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+    
+    //  Sort after load
+    
+    override func viewWillAppear(_ animated: Bool) {
+  
+        programmingLanguage = realm.objects(LanguagesList.self)
+        self.programmingLanguage = self.programmingLanguage.sorted(byKeyPath: "createdAt", ascending:false)
         
-            if let listsTasks = programmingLanguage{
-                return listsTasks.count
-            }
-            return 0
-    }
+        self.tableView.setEditing(false, animated: true)
+        self.tableView.reloadData()
+        }
+
+
+
+   
+    //Delete and edit options
     
    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
    
@@ -76,60 +71,74 @@ func readTasksAndUpdateUI(){
     return [edit,delete]
     }
 
-        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath)
-            cell.textLabel?.text = programmingLanguage![indexPath.row].nameLanguages
-            return cell
-    }
-   
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+   
+    // Table view data source
+ 
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath)
+        let item = programmingLanguage[indexPath.row]
+        cell.textLabel!.text = item.nameLanguages
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     return programmingLanguage.count
+    }
+    
+    
+        // Sort
+    
     @IBAction func didSelectSortCriteria(sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 0{
-            
-            // A-Z
-            self.programmingLanguage = self.programmingLanguage.sorted(byKeyPath: "nameLanguages")
-            
-        }
-        else{
-            // date
-             self.programmingLanguage = self.programmingLanguage.sorted(byKeyPath: "createdAt",ascending:false)
-            
-        }
-self.tableView.reloadData()
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        tableView.reloadData()
-    }
- /*   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "" {
-            let indexPath = tableView.indexPathForSelectedRow
-            let name = programmingLanguage[indexPath!.row].nameLanguages
-            let title = programmingLanguage[indexPath!.row].titleLanguages
-            let link = programmingLanguage[indexPath!.row].linkLanguages
-            
-            let destinationDetailViewController = segue.destination as! detailLanguagesViewController
-          
-            destinationDetailViewController.detailDetailName = name
-            destinationDetailViewController.detailDetailTitle = title
-            destinationDetailViewController.detailDetailLink = link
-        }
-        if segue.identifier == "editDetail" {
-            let indexPath = tableView.indexPathForSelectedRow
-            let name = programmingLanguage[indexPath!.row].nameLanguages
-            let title = programmingLanguage[indexPath!.row].titleLanguages
-            let link = programmingLanguage[indexPath!.row].linkLanguages
-            
-            let destinaionEditViewController = segue.destination as! editNewLanguagesTableViewController
-            
-            destinaionEditViewController.editDetailName = name
-            destinaionEditViewController.editDetailTitle = title
-            destinaionEditViewController.editDetailLink = link
-                    }
+            self.programmingLanguage = self.programmingLanguage.sorted(byKeyPath: "createdAt",ascending:false)
             }
+        else {
+            self.programmingLanguage = self.programmingLanguage.sorted(byKeyPath: "nameLanguages")
+            }
+        self.tableView.reloadData()
+}
+  
+  
+        // Segue
+    
 
-*/
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let name = programmingLanguage[indexPath.row].nameLanguages
+                let title = programmingLanguage[indexPath.row].titleLanguages
+                let link = programmingLanguage[indexPath.row].linkLanguages
+                
+                let destinationViewController = (segue.destination as! UINavigationController).topViewController as! detailLanguagesViewController
+                destinationViewController.detailDetailName = name
+                destinationViewController.detailDetailNameDetailTitle = title
+                destinationViewController.detailDetailNameDetailLink = link
+                
+ 
+            }
+        }
+        
+        if segue.identifier == "editDetail" {
+           
+            let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! editNewLanguagesTableViewController
+            
+            let object = sender as! LanguagesList
+            
+            let editName = object.nameLanguages
+            let editTitle = object.titleLanguages
+            let editLink = object.linkLanguages
+            
+            destinationEditViewController.editDetailName = editName
+            destinationEditViewController.editDetailTitle = editTitle
+            destinationEditViewController.editDetailLink = editLink
+
+
+        }
+}
 }

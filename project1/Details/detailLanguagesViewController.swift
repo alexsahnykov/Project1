@@ -10,30 +10,21 @@ import UIKit
 import RealmSwift
 
 class detailLanguagesViewController: UIViewController {
-    var detailDetailName = ""
-    var detailDetailTitle = ""
-    var detailDetailLink = ""
-    
-    @IBOutlet weak var detailNameLable: UILabel!
-    @IBOutlet weak var titleNameLable: UITextView!
-    @IBOutlet weak var linklNameLable: UILabel!
-    
   
+    
+    var detailDetailName = ""
+    var detailDetailNameDetailTitle = ""
+    var detailDetailNameDetailLink = ""
+   
+    @IBOutlet weak var detailLable: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        detailNameLable.text = detailDetailName
-        titleNameLable.text = detailDetailTitle
-        linklNameLable.text = detailDetailLink
-        // Do any additional setup after loading the view.
-    }
-    
-    
-   
-    
-    
-    override func didReceiveMemoryWarning() {
+        
+}
+
+   override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
