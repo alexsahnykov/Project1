@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         try! realmInstance.write {
             realmInstance.add(LanguagesList(nameLanguages: "Swift", titleLanguages: "Swift", linkLanguages: "https://www.apple.com/ru/swift/"))
            
-            realmInstance.add(LanguagesList(nameLanguages: "JS", titleLanguages: "JS", linkLanguages: "WWW"))
+            realmInstance.add(LanguagesList(nameLanguages: "JS", titleLanguages: "JS", linkLanguages: "https://vk.com/daft5"))
            
             realmInstance.add(LanguagesList(nameLanguages: "Ruby", titleLanguages: "Ruby", linkLanguages: "WWW"))
          

@@ -17,14 +17,14 @@ class detailTableViewController: UITableViewController,SFSafariViewControllerDel
     var DetailTitle = "title"
     var DetailLink = "link"
     
-    @IBAction func sdad(_ sender: Any) {
+    @IBAction func linkButton(sender: Any) {
         if let URL = URL(string: DetailLink) {
             let svc = SFSafariViewController(url: URL)
             self.present(svc, animated: true, completion: nil)
         } else {
             let ac = UIAlertController(title: "Ошибка", message: "Заполните имя языка пожалуйста", preferredStyle: .alert)
             let cancel = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
-            present(ac, animated: true, completion: nil)
+          present(ac, animated: true, completion: nil)
             ac.addAction(cancel)
         }
     }
