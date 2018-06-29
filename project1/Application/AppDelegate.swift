@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func LanguagesInitial() {
         let realmInstance = try! Realm()
         try! realmInstance.write {
-            realmInstance.add(LanguagesList(nameLanguages: "Swift", titleLanguages: "Swift", linkLanguages: "WWW"))
+            realmInstance.add(LanguagesList(nameLanguages: "Swift", titleLanguages: "Swift", linkLanguages: "https://www.apple.com/ru/swift/"))
            
             realmInstance.add(LanguagesList(nameLanguages: "JS", titleLanguages: "JS", linkLanguages: "WWW"))
            

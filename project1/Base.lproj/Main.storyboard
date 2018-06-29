@@ -305,13 +305,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="112.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K02-Cv-MPP">
-                                                    <rect key="frame" x="16" y="11" width="343" height="21"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3o-Aa-yTt">
+                                                    <rect key="frame" x="16" y="11" width="343" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="linkButtonAction:" destination="zLg-Q4-uzy" eventType="touchUpInside" id="fWC-p9-Ktw"/>
+                                                        <action selector="sdad:" destination="zLg-Q4-uzy" eventType="touchUpInside" id="7nd-w0-cPc"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -331,7 +333,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="linkLable" destination="K02-Cv-MPP" id="mB0-H6-O2a"/>
+                        <outlet property="linkButton" destination="b3o-Aa-yTt" id="6dW-SO-tov"/>
                         <outlet property="nameLable" destination="EKi-ts-GY4" id="sEs-oO-6FT"/>
                         <outlet property="textLable" destination="XfY-yr-DbJ" id="2QN-fD-xMY"/>
                     </connections>
@@ -339,7 +341,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZp-V0-Oem" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="cXs-gQ-THS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1406" y="-477"/>
+            <point key="canvasLocation" x="1405.5999999999999" y="-477.21139430284859"/>
         </scene>
         <!--Профиль-->
         <scene sceneID="rXG-NL-i1D">
