@@ -34,8 +34,8 @@ class editNewLanguagesTableViewController: UITableViewController {
            
             try! realm.write({
                 realm.delete(languagesToDelete)})
-                
-            performSegue(withIdentifier: "unwindSegueEditCell", sender: self) //save segue to main viev
+            performSegue(withIdentifier: "unwindSegueFromEditCell", sender: self)
+   
         }
         
     }

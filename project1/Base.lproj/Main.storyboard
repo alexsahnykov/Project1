@@ -287,7 +287,7 @@
                                                     <rect key="frame" x="16" y="0.0" width="343" height="352"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -441,7 +441,7 @@
                     <navigationItem key="navigationItem" title="Редактирование" id="2RW-bL-miO">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hUw-xb-Lyz">
                             <connections>
-                                <segue destination="5h9-qq-5K5" kind="unwind" unwindAction="closeWithSegue:" id="Qaq-NH-dqm"/>
+                                <segue destination="5h9-qq-5K5" kind="unwind" identifier="unwindSegueFromEditCell" unwindAction="closeWithSegue:" id="Qaq-NH-dqm"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="e0d-Sg-Hzl">
@@ -464,7 +464,6 @@
         <!--Navigation Controller-->
         <scene sceneID="KOn-dG-fnq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kud-hi-KoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nq5-YP-oti" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="5X1-hZ-Sw0"/>
@@ -477,6 +476,7 @@
                         <segue destination="oCJ-GP-xfs" kind="relationship" relationship="rootViewController" id="ekK-pm-bzk"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kud-hi-KoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="382" y="296"/>
         </scene>
