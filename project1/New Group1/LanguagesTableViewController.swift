@@ -115,10 +115,10 @@ class LanguagesTableViewController: UITableViewController {
                 let title = programmingLanguage[indexPath.row].titleLanguages
                 let link = programmingLanguage[indexPath.row].linkLanguages
                 
-                let destinationViewController = (segue.destination as! UINavigationController).topViewController as! detailLanguagesViewController
-                destinationViewController.detailDetailName = name
-                destinationViewController.detailDetailNameDetailTitle = title
-                destinationViewController.detailDetailNameDetailLink = link
+                let destinationViewController = segue.destination as!  detailTableViewController
+                destinationViewController.DetailName = name
+                destinationViewController.DetailTitle = title
+                destinationViewController.DetailLink = link
                 
  
             }

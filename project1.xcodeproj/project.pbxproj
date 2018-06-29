@@ -14,10 +14,10 @@
 		C132EC4920D3CCF500F16DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C132EC4720D3CCF500F16DBA /* LaunchScreen.storyboard */; };
 		C132EC5420D3CCF500F16DBA /* project1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132EC5320D3CCF500F16DBA /* project1Tests.swift */; };
 		C132EC5F20D3CCF500F16DBA /* project1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132EC5E20D3CCF500F16DBA /* project1UITests.swift */; };
-		C1434BEC20E2D2780033F80D /* detailLanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1434BEB20E2D2780033F80D /* detailLanguagesViewController.swift */; };
 		C15FBDA820E26C2C00538A43 /* AddNewLanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15FBDA720E26C2C00538A43 /* AddNewLanguagesTableViewController.swift */; };
 		C18CF3D020DBD6500068F15B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C18CF3CF20DBD6500068F15B /* .gitignore */; };
 		C18CF3D620DC2FE50068F15B /* LanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18CF3D520DC2FE50068F15B /* LanguagesTableViewController.swift */; };
+		C1A74BA620E6369800122CA6 /* detailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A74BA520E6369800122CA6 /* detailTableViewController.swift */; };
 		C1BE9E2A20DFCC6B0085A566 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE9E2920DFCC6B0085A566 /* Languages.swift */; };
 		C1F2F4AD20E38E950032B309 /* editNewLanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2F4AC20E38E950032B309 /* editNewLanguagesTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -55,10 +55,10 @@
 		C132EC5A20D3CCF500F16DBA /* project1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = project1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C132EC5E20D3CCF500F16DBA /* project1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project1UITests.swift; sourceTree = "<group>"; };
 		C132EC6020D3CCF500F16DBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1434BEB20E2D2780033F80D /* detailLanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailLanguagesViewController.swift; sourceTree = "<group>"; };
 		C15FBDA720E26C2C00538A43 /* AddNewLanguagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewLanguagesTableViewController.swift; sourceTree = "<group>"; };
 		C18CF3CF20DBD6500068F15B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C18CF3D520DC2FE50068F15B /* LanguagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesTableViewController.swift; sourceTree = "<group>"; };
+		C1A74BA520E6369800122CA6 /* detailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailTableViewController.swift; sourceTree = "<group>"; };
 		C1BE9E2920DFCC6B0085A566 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		C1F2F4AC20E38E950032B309 /* editNewLanguagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editNewLanguagesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,7 +201,7 @@
 		C1EDB88220E032B1000D9CD1 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				C1434BEB20E2D2780033F80D /* detailLanguagesViewController.swift */,
+				C1A74BA520E6369800122CA6 /* detailTableViewController.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -389,11 +389,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1A74BA620E6369800122CA6 /* detailTableViewController.swift in Sources */,
 				C132EC3F20D3CCF100F16DBA /* AppDelegate.swift in Sources */,
 				C18CF3D620DC2FE50068F15B /* LanguagesTableViewController.swift in Sources */,
 				C1F2F4AD20E38E950032B309 /* editNewLanguagesTableViewController.swift in Sources */,
 				C1BE9E2A20DFCC6B0085A566 /* Languages.swift in Sources */,
-				C1434BEC20E2D2780033F80D /* detailLanguagesViewController.swift in Sources */,
 				C15FBDA820E26C2C00538A43 /* AddNewLanguagesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
