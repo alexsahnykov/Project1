@@ -63,7 +63,7 @@ class LanguagesTableViewController: UITableViewController {
     }
         let edit = UITableViewRowAction(style: .default, title: "Edit") { (action, indexPath) in
             let languageToBeUpdated = self.programmingLanguage[indexPath.row]
-            self.performSegue(withIdentifier: "editSegue", sender: languageToBeUpdated) 
+            self.performSegue(withIdentifier: "editSegue", sender: languageToBeUpdated)
         }
     edit.backgroundColor = #colorLiteral(red: 0, green: 0.4117647059, blue: 0.8509803922, alpha: 1)
     delete.backgroundColor = #colorLiteral(red: 0.9152866006, green: 0.246553123, blue: 0.2010768652, alpha: 1)
@@ -124,21 +124,20 @@ class LanguagesTableViewController: UITableViewController {
             }
         }
         
-        if segue.identifier == "editDetail" {
-           
-            let destinationEditViewController = (segue.destination as! UINavigationController).topViewController as! editNewLanguagesTableViewController
+        if segue.identifier == "editSegue" {
+            let dvc = (segue.destination as! UINavigationController).topViewController as! editNewLanguagesTableViewController
             
-            let object = sender as! LanguagesList
+                let object = sender as! LanguagesList
+                
+                let editName = object.nameLanguages
+                let editTitle = object.titleLanguages
+                let editLink = object.linkLanguages
+                
+                dvc.editDetailName = editName
+                dvc.editDetailTitle = editTitle
+                dvc.editDetailLink = editLink
+                dvc.languagesToDelete = object
             
-            let editName = object.nameLanguages
-            let editTitle = object.titleLanguages
-            let editLink = object.linkLanguages
-            
-            destinationEditViewController.editDetailName = editName
-            destinationEditViewController.editDetailTitle = editTitle
-            destinationEditViewController.editDetailLink = editLink
-
-
-        }
+}
 }
 }

@@ -8,20 +8,42 @@
 
 import UIKit
 import RealmSwift
+
 class editNewLanguagesTableViewController: UITableViewController {
-    var programmingLanguage: Results<LanguagesList>?
+ let realm = try! Realm()
 
     @IBOutlet weak var nameEditTextField: UITextField!
     @IBOutlet weak var titleEditTextField: UITextField!
     @IBOutlet weak var linkEditTextField: UITextField!
     
     @IBAction func editSaveButtonPressed(_ sender: Any) {
+            if ((nameEditTextField.text?.isEmpty)! || nameEditTextField.text == " ") {
+            let ac = UIAlertController(title: "Ошибка", message: "Заполните имя языка пожалуйста", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+            present(ac, animated: true, completion: nil)
+            ac.addAction(cancel)
+            print ("Не все поля заполнены!")
+        } else {
+            let LanguagesItem = LanguagesList()
+            LanguagesItem.nameLanguages = nameEditTextField.text!
+            LanguagesItem.titleLanguages = titleEditTextField.text!
+            LanguagesItem.linkLanguages = linkEditTextField.text!
+            
+            try! realm.write({
+                realm.add(LanguagesItem, update: false)})
+           
+            try! realm.write({
+                realm.delete(languagesToDelete)})
+                
+            performSegue(withIdentifier: "unwindSegueEditCell", sender: self) //save segue to main viev
+        }
+        
     }
     
     var editDetailName = ""
     var editDetailTitle = ""
     var editDetailLink = ""
-     var LanguageToDelete = LanguagesList()
+    var languagesToDelete = LanguagesList()
    
     
     override func viewDidLoad() {
