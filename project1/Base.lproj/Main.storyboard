@@ -310,7 +310,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <connections>
-                                                        <action selector="linkButton:" destination="zLg-Q4-uzy" eventType="touchUpInside" id="TN8-2r-zbz"/>
+                                                        <action selector="linkButtonWithSender:" destination="zLg-Q4-uzy" eventType="touchUpInside" id="wnI-sc-T2q"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

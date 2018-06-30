@@ -32,21 +32,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            
             realmInstance.add(LanguagesList(nameLanguages: "JS", titleLanguages: "JS", linkLanguages: "https://vk.com/daft5"))
            
-            realmInstance.add(LanguagesList(nameLanguages: "Ruby", titleLanguages: "Ruby", linkLanguages: "WWW"))
+            realmInstance.add(LanguagesList(nameLanguages: "Ruby", titleLanguages: "Ruby", linkLanguages: "https://"))
          
-            realmInstance.add(LanguagesList(nameLanguages: "Python", titleLanguages: "Python", linkLanguages: "WWW"))
+            realmInstance.add(LanguagesList(nameLanguages: "Python", titleLanguages: "Python", linkLanguages: "https://"))
             
-            realmInstance.add(LanguagesList(nameLanguages: "C++", titleLanguages: "C++", linkLanguages: "WWW"))
+            realmInstance.add(LanguagesList(nameLanguages: "C++", titleLanguages: "C++", linkLanguages: "https://"))
             
-            realmInstance.add(LanguagesList(nameLanguages: "C#", titleLanguages: "C#", linkLanguages: "WWW"))
+            realmInstance.add(LanguagesList(nameLanguages: "C#", titleLanguages: "C#", linkLanguages: "https://"))
             
-            realmInstance.add(LanguagesList(nameLanguages: "PHP", titleLanguages: "PHP", linkLanguages: "WWW"))
+            realmInstance.add(LanguagesList(nameLanguages: "PHP", titleLanguages: "PHP", linkLanguages: "https://"))
             
-            realmInstance.add(LanguagesList(nameLanguages: "Java", titleLanguages: "Java", linkLanguages: "WWW"))
+            realmInstance.add(LanguagesList(nameLanguages: "Java", titleLanguages: "Java", linkLanguages: "https://"))
             
-            realmInstance.add(LanguagesList(nameLanguages: "Scala", titleLanguages: "Scala", linkLanguages: "WWW"))
+            realmInstance.add(LanguagesList(nameLanguages: "Scala", titleLanguages: "Scala", linkLanguages: "https://"))
             
-            realmInstance.add(LanguagesList(nameLanguages: "Pascal", titleLanguages: "Pascal", linkLanguages: "WWW"))
+            realmInstance.add(LanguagesList(nameLanguages: "Pascal", titleLanguages: "Pascal", linkLanguages: "https://"))
         }
             UserDefaults.standard.set(true, forKey: "db_install")
     }

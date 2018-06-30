@@ -13,7 +13,7 @@ import RealmSwift
 class LanguagesList: Object {
     @objc dynamic var nameLanguages:String = ""
     @objc dynamic var titleLanguages:String = ""
-    @objc dynamic var linkLanguages:String = ""
+    @objc dynamic var linkLanguages:String = "https://"
     @objc dynamic var createdAt = NSDate()
    
     convenience init(nameLanguages: String, titleLanguages: String, linkLanguages: String ) {

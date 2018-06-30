@@ -13,6 +13,7 @@ class AddNewLanguagesTableViewController: UITableViewController {
     let realm = try! Realm()
 
     override func viewDidLoad() {
+        linkTextField.text = "https://"
         super.viewDidLoad()
         
 
