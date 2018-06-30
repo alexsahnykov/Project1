@@ -11,36 +11,32 @@ import SafariServices
 class detailTableViewController: UITableViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var nameLable: UILabel!
     @IBOutlet weak var textLable: UITextView!
-
     @IBOutlet weak var linkButton: UIButton!
-    var DetailName = "name"
-    var DetailTitle = "title"
-    var DetailLink = "link"
+    
+    var detailLanguages = LanguagesList()
     
     @IBAction func linkButton(sender: AnyObject) {
-        if let URL = URL(string: DetailLink) {
+        if let URL = URL(string: detailLanguages.linkLanguages) {
            
             if  UIApplication.shared.canOpenURL(URL) == true {
                 let svc = SFSafariViewController(url: URL)
                 self.present(svc, animated: true, completion: nil)
-            } else
-            {  let alert = UIAlertController(title: "Ошибка", message: "Неверно введен URL адрес", preferredStyle: .alert)
-                let ok = UIAlertAction(title: "Ok", style: .default, handler: {
-                    _ in
-                    self.dismiss(animated: true, completion: nil)
-                })
-                alert.addAction(ok)
-                
-                self.present(alert, animated: true, completion: nil)
+            }
+            else
+            {    let ac = UIAlertController(title: "Ошибка", message: "Неверно введен URL адрес", preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+                present(ac, animated: true, completion: nil)
+                ac.addAction(cancel)
         }
+            
     }
     }
  
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLable.text = DetailName
-        textLable.text = DetailTitle
-        linkButton.setTitle(DetailLink, for: .normal)
+        nameLable.text = detailLanguages.nameLanguages
+        textLable.text = detailLanguages.titleLanguages
+        linkButton.setTitle(detailLanguages.linkLanguages, for: .normal)
     }
 
     override func didReceiveMemoryWarning() {

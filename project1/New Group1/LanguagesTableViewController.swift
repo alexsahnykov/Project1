@@ -111,32 +111,18 @@ class LanguagesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let name = programmingLanguage[indexPath.row].nameLanguages
-                let title = programmingLanguage[indexPath.row].titleLanguages
-                let link = programmingLanguage[indexPath.row].linkLanguages
-                
-                let destinationViewController = segue.destination as!  detailTableViewController
-                destinationViewController.DetailName = name
-                destinationViewController.DetailTitle = title
-                destinationViewController.DetailLink = link
-                
- 
+                let object = programmingLanguage[indexPath.row]
+                let dvc = segue.destination as!  detailTableViewController
+                dvc.detailLanguages = object
             }
         }
         
         if segue.identifier == "editSegue" {
             let dvc = (segue.destination as! UINavigationController).topViewController as! editNewLanguagesTableViewController
-            
-                let object = sender as! LanguagesList
-                
-                let editName = object.nameLanguages
-                let editTitle = object.titleLanguages
-                let editLink = object.linkLanguages
-                
-                dvc.editDetailName = editName
-                dvc.editDetailTitle = editTitle
-                dvc.editDetailLink = editLink
-                dvc.languagesToDelete = object
+            let object = sender as! LanguagesList
+            dvc.LanguagesitemToEdit = object
+               
+    
             
 }
 }

@@ -11,7 +11,10 @@ import RealmSwift
 
 class editNewLanguagesTableViewController: UITableViewController {
  let realm = try! Realm()
-
+var LanguagesitemToEdit = LanguagesList()
+    
+    
+    
     @IBOutlet weak var nameEditTextField: UITextField!
     @IBOutlet weak var titleEditTextField: UITextField!
     @IBOutlet weak var linkEditTextField: UITextField!
@@ -30,27 +33,22 @@ class editNewLanguagesTableViewController: UITableViewController {
             LanguagesItem.linkLanguages = linkEditTextField.text!
             
             try! realm.write({
-                realm.add(LanguagesItem, update: false)})
-           
-            try! realm.write({
-                realm.delete(languagesToDelete)})
+                realm.add(LanguagesItem, update: true)})
             performSegue(withIdentifier: "unwindSegueFromEditCell", sender: self)
    
         }
         
     }
     
-    var editDetailName = ""
-    var editDetailTitle = ""
-    var editDetailLink = ""
-    var languagesToDelete = LanguagesList()
+
+  
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameEditTextField.text = editDetailName
-        titleEditTextField.text = editDetailTitle
-        linkEditTextField.text = editDetailLink
+        nameEditTextField.text = LanguagesitemToEdit.nameLanguages
+        titleEditTextField.text = LanguagesitemToEdit.titleLanguages
+        linkEditTextField.text = LanguagesitemToEdit.linkLanguages
     }
 
     override func didReceiveMemoryWarning() {

@@ -16,11 +16,17 @@ class LanguagesList: Object {
     @objc dynamic var linkLanguages:String = "https://"
     @objc dynamic var createdAt = NSDate()
    
+    
+   
     convenience init(nameLanguages: String, titleLanguages: String, linkLanguages: String ) {
         self.init()
         self.nameLanguages = nameLanguages
         self.titleLanguages = titleLanguages
         self.linkLanguages = linkLanguages
     }
+    override static func primaryKey() -> String? {
+        return "nameLanguages"
+    }
 }
+
 
